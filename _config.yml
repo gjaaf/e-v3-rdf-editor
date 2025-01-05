@@ -1,10 +1,12 @@
 title: RDF-Editor
 description: An emacs based rdf-data explorer and editor
-remote_theme: just-the-docs
+theme: just-the-docs
 
-url: https://gjaaf.github.io
+url: https://just-the-docs.github.io
+# url: https://gjaaf.github.io
 
 aux_links:
-  GitHub Repository: https://github.com/gjaaf/rdf-editor-v3
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  # GitHub Repository: https://github.com/gjaaf/rdf-editor-v3
 
 # logo: "/assets/2025-01-04_14-17-27.png"
