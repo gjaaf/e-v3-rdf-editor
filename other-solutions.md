@@ -1,8 +1,9 @@
 ---
 layout: page
 title: "References other solutions"
-permalink: /other-solutions
+permalink: /other-solutions.html
 nav_order: 7
+parent: RDF-Editor
 ---
 
 References to other solutions that are avaible:
