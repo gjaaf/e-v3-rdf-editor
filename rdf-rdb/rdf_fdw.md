@@ -92,7 +92,7 @@ rdf_fdw is a huge step forward. Given the fact that many BI tools can
 only connect to relational data stores, the ability now to access RDF
 data over a relational data store in this easy way is very useful.
 Combined to that: the fact that there is no intermediate storage and
-no copying ensures that linked data soultions fit much better to the
+no copying ensures that linked data solutions fit much better to the
 the data at the source paradigm currently *en vogue* in the
 Netherlands. Finally, the fact that is relatively lightweight, just an
 extension in PostgreSQL make is a real attractive option.
