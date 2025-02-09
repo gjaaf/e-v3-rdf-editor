@@ -3,6 +3,7 @@ title: RDF-Editor
 layout: home
 nav_order: 1
 parent: Home
+has_toc: false
 ---
 
 RDF-Editor

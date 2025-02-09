@@ -10,3 +10,21 @@ aux_links:
   # GitHub Repository: https://github.com/gjaaf/rdf-editor-v3
 
 # logo: "/assets/2025-01-04_14-17-27.png"
+
+callouts_level: loud # quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+

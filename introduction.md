@@ -51,6 +51,10 @@ started:
 10. *SKOS Simple Knowledge Organization System (W3C)*
      [W3C SKOS Reference](https://www.w3.org/TR/skos-reference/)
 
+11. *DASH Data Shapes*
+     [Topquadrant: Stuff that could become an official standard](https://www.datashapes.org/). Highly recommended reading material, and the foundation
+     for the RDF-editor as a feasible solution.
+
 ### Lisp
 
 *   **Beginner:**
