@@ -1,15 +1,32 @@
-title: On semantics
-description: Work on an old technology with lots of promise
+title: Linked Data, RDF Tools, Emacs, Architecture and beyond
+description: Explore linked data, ontologies, RDF tools in Emacs, data conversion techniques, and ArchiMate modeling. Discusses Fuseki, data conversion and tools for for RDF analysis. Last but not least AI and RDF.
+keywords: "Linked Data, RDF, Emacs, Ontologies, RDF Servers, Fuseki, Ontop, RDF-FDW, PostgreSQL, ArchiMate, Data Conversion"
 theme: just-the-docs
 
+collections:
+  documents:
+    permalink: "/:collection/:path/"
+    output: true
+  other:
+    permalink: "/:collection/:path/"
+    output: true
+    
+just_the_docs:
+  # Define which collections are used in just-the-docs
+  collections:
+    documents:
+      name: Semantics
+    other:
+      name: Architecture
+      nav_fold: true
+      
+social_links:
+     name: rss
+     link: "/feed.xml"
+  
 url: https://just-the-docs.github.io
-# url: https://gjaaf.github.io
-
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
-  # GitHub Repository: https://github.com/gjaaf/rdf-editor-v3
-
-# logo: "/assets/2025-01-04_14-17-27.png"
+ 
+logo: "/assets/Logo-on-sematics.png"
 
 callouts_level: loud # quiet # or loud
 callouts:
@@ -28,3 +45,9 @@ callouts:
     title: Warning
     color: red
 
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  
+
+  

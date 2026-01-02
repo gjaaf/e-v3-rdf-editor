@@ -1,0 +1,61 @@
+# ACL-DATA
+# Demonstration data for access control mechanismes in RDF-stores, used on Fuseki
+#
+# This set contaoins an empty default graph.
+# The graph objects contains object that are not top-secret, the graph secret-objects are the object that are top-secret and which need a special access priviledge.
+# The graph region1 contains the data for region1
+# The graph region2 contains the data for region2
+# The object contain a reference to the region and the region graphs are access controlled, so that a query that request objects with a region should use access control mechanisms.
+# A user Alice that has access to the region1 graph, should only see objects from region 1
+# A user Bob that has access to the region2 graph, should only see objects from region 2
+# Both of then have only access to the not top-secret graph, so no secret data should be shown
+# A user John, that has access to the region1 graph and the top-secret graph should see top-secret objects from region1
+# A user Theresa, that has access to the region1 graph and the region2 graph and the top-secret graph and the not top-secret object graph should see all obejcts from all regions
+# Note this only can work if the query includes the region information
+# If however the default graph contains all subjects (so all objects) without any further information... It still does not work. :-(
+# Expectation:
+#   - What will/should work: security on secret / non-secret, and combining this to regio info, when it is combined in the query.
+#   - No region inforamtion in the query should include all objects independent of the region. 
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix adms: <http://www.w3.org/ns/adms#>
+@prefix ex: <http://example.org/> .
+@prefix inst: <http://example.org/instance/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix prov: <http://www.w3.org/ns/prov#> . #For Entity
+
+GRAPH ex:graphA {
+    ex:RegionA rdf:type adms:AdministrativeArea .
+    ex:RegionA ex:hasName "Region A" .
+}
+
+GRAPH ex:graphB {
+    ex:RegionB rdf:type adms:AdministrativeArea .
+    ex:RegionB ex:hasName "Region B" .
+}
+
+GRAPH ex:publicGraph {
+    inst:Lock1 rdf:type sosa:FeatureOfInterest .
+    inst:Lock1 rdf:type prov:Entity . # Added Physical Object
+    inst:Lock1 ex:name "Lock Alpha" .
+
+    inst:Bridge1 rdf:type sosa:FeatureOfInterest .
+    inst:Bridge1 rdf:type prov:Entity . # Added Physical Object
+    inst:Bridge1 ex:name "Bridge Beta" .
+
+    inst:River1 rdf:type sosa:FeatureOfInterest .
+    inst:River1 rdf:type prov:Entity . # Added Physical Object
+    inst:River1 ex:name "River Gamma" .
+}
+
+GRAPH ex:secretGraph {
+    inst:SecretLock2 rdf:type sosa:FeatureOfInterest .
+    inst:SecretLock2 rdf:type prov:Entity . # Added Physical Object
+    inst:SecretLock2 ex:name "Secret Lock Omega" .
+    inst:SecretLock2 ex:sensitivity "High" .
+
+    inst:SecretBridge2 rdf:type sosa:FeatureOfInterest .
+    inst:SecretBridge2 rdf:type prov:Entity . # Added Physical Object
+    inst:SecretBridge2 ex:name "Secret Bridge Delta" .
+    inst:SecretBridge2 ex:sensitivity "High" .
+}
